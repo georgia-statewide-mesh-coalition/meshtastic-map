@@ -1,4 +1,4 @@
-<h2 align="center">Florida Meshtastic Map</h2>
+<h2 align="center">Gerogia Meshtastic Map</h2>
 
 <p align="center">
 <a href="https://discord.gg/K55zeZyHKK"><img src="https://img.shields.io/badge/Discord-Liam%20Cottle's%20Discord-%237289DA?style=flat&logo=discord" alt="discord"/></a>
@@ -18,7 +18,7 @@ Liam's version of the map is available at https://meshtastic.liamcottle.net
 
 ## How does it work?
 
-- An [mqtt client](./src/mqtt.js) is persistently connected to `mqtt.meshtastic.org` and subscribed to the `msh/#` topic.
+- An [mqtt client](./src/mqtt.js) is persistently connected to the GSMC MQTT server and subscribed to the `msh/#` topic.
 - All messages received are attempted to be decoded as [ServiceEnvelope](https://buf.build/meshtastic/protobufs/docs/main:meshtastic#meshtastic.ServiceEnvelope) packets.
 - If a packet is encrypted, it attempts to decrypt it with the default `AQ==` key.
 - If a packet can't be decoded as a `ServiceEnvelope`, it is ignored.
@@ -32,7 +32,7 @@ Liam's version of the map is available at https://meshtastic.liamcottle.net
 
 ## Features
 
-- [x] Connects to `mqtt.areyoumeshingwith.us` to collect nodes and metrics.
+- [x] Connects to `mqtt.gamesh.net` to collect nodes and metrics.
 - [x] Shows nodes on the map if they have reported a valid position.
 - [x] Search bar to find nodes by ID, Hex ID, Short Name and Long Name.
 - [x] Hover over nodes on the map to see basic information and a preview image.
@@ -61,7 +61,7 @@ Liam's version of the map is available at https://meshtastic.liamcottle.net
 Clone the project repo.
 
 ```
-git clone https://github.com/flmesh/meshtastic-map
+git clone https://github.com/georgia-statewide-mesh-coalition/meshtastic-map
 cd meshtastic-map
 ```
 
