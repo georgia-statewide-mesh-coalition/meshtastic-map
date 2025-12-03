@@ -13,4 +13,4 @@ COPY . .
 RUN apk add --no-cache openssl
 
 
-EXPOSE 8080
+EXPOSE 8085
