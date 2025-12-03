@@ -18,7 +18,7 @@ Liam's version of the map is available at https://meshtastic.liamcottle.net
 
 ## How does it work?
 
-- An [mqtt client](./src/mqtt.js) is persistently connected to the GSMC MQTT server and subscribed to the `msh/#` topic.
+- A [mqtt client](./src/mqtt.js) is persistently connected to the GSMC MQTT server and subscribed to the `msh/#` topic.
 - All messages received are attempted to be decoded as [ServiceEnvelope](https://buf.build/meshtastic/protobufs/docs/main:meshtastic#meshtastic.ServiceEnvelope) packets.
 - If a packet is encrypted, it attempts to decrypt it with the default `AQ==` key.
 - If a packet can't be decoded as a `ServiceEnvelope`, it is ignored.
