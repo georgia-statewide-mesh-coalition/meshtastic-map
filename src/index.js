@@ -48,7 +48,7 @@ if(options.help){
 }
 
 // get options and fallback to default values
-const port = options["port"] ?? 8080;
+const port = options["port"] ?? 8085;
 
 // load json
 const hardwareModels = JSON.parse(fs.readFileSync(path.join(__dirname, "json/hardware_models.json"), "utf-8"));
