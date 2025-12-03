@@ -11,8 +11,8 @@ services:
       dockerfile: ./Dockerfile
     command: /app/docker/mqtt.sh
     environment:
-      DATABASE_URL: "mysql://root:password@database:3306/meshtastic-map?connection_limit=100"
-      MQTT_OPTS: "" # add any custom mqtt.js options here
+      DATABASE_URL: "mysql://root:password@database:3306/meshtastic-map?connection_limit=1000"
+      MQTT_OPTS: ""  # add any custom mqtt.js options here
 
   # runs the web map ui
   meshtastic-map:
@@ -25,7 +25,7 @@ services:
       dockerfile: ./Dockerfile
     command: /app/docker/map.sh
     ports:
-      - 8080:8080/tcp
+      - 8085:8085/tcp
     environment:
       DATABASE_URL: "mysql://root:password@database:3306/meshtastic-map?connection_limit=100"
       MAP_OPTS: "" # add any custom index.js options here
@@ -33,20 +33,20 @@ services:
   # runs the database to store everything from mqtt
   database:
     container_name: database
-    image: bitnami/mariadb
+    image: mysql:8.0
     ports:
       - 3306:3306/tcp
     environment:
-      MARIADB_DATABASE: "meshtastic-map"
-      MARIADB_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "meshtastic-map"
+      MYSQL_ROOT_PASSWORD: "password"
     volumes:
-      - database_data:/bitnami/mariadb
+      - database_data:/var/lib/mysql
     healthcheck:
-      test: ['CMD', '/opt/bitnami/scripts/mariadb/healthcheck.sh']
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-ppassword"]
       interval: 15s
       timeout: 5s
       retries: 6
-      start_interval: 5s
 
 volumes:
   database_data:
+
