@@ -216,7 +216,7 @@ npm run test
 
 ## Contributing
 
-If you have a feature request, or find a bug, please [open an issue](https://github.com/liamcottle/meshtastic-map/issues) here on GitHub.
+If you have a feature request, or find a bug, please [open an issue](https://github.com/georgia-statewide-mesh-coalition/meshtastic-map/issues) here on GitHub.
 
 ## License
 
