@@ -8,7 +8,7 @@
 <a href="./donate.md"><img src="https://img.shields.io/badge/Donate%20Bitcoin-bc1qy22smke8n4c54evdxmp7lpy9p0e6m9tavtlg2q-%23FF9900?style=flat&logo=bitcoin" alt="donate bitcoin"/></a>
 </p>
 
-A map of all Meshtastic nodes heard via MQTT in Florida.
+A map of all Meshtastic nodes heard via MQTT in Georgia.
 
 Liam's version of the map is available at https://meshtastic.liamcottle.net
 
